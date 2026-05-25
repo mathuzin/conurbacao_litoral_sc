@@ -2,14 +2,14 @@
 
 from skimage import io, filters, color
 
-balneario = io.imread('Balneario.png')
+balneario = io.imread('assets/Balneario.png')
 if balneario.ndim == 3:
     balneario = balneario[:, :, 0]
 
 limiar = filters.threshold_otsu(balneario)
 balneario_bin = balneario > limiar
 
-itapema = io.imread('Itapema.png')
+itapema = io.imread('assets/Itapema.png')
 if itapema.ndim == 3:
     itapema = itapema[:, :, 0]
 
@@ -21,14 +21,14 @@ itapema_bin = itapema > limiar2
 # io.imshow(itapema_bin)
 # io.show()
 
-balneario25 = io.imread('Balneario2025.png')
+balneario25 = io.imread('assets/Balneario2025.png')
 if balneario25.ndim == 3:
     balneario25 = balneario25[:, :, 0]
 
 limiar = filters.threshold_otsu(balneario25)
 balneario25_bin = balneario25 > limiar
 
-itapema25 = io.imread('Itapema2025.png')
+itapema25 = io.imread('assets/Itapema2025.png')
 if itapema25.ndim == 3:
     itapema25 = itapema25[:, :, 0]
 
@@ -41,7 +41,7 @@ itapema25_bin = itapema25 > limiar2
 # io.show()
 
 
-balnearioItapema = io.imread('BalnearioItapema2015.png')
+balnearioItapema = io.imread('assets/BalnearioItapema2015.png')
 if balnearioItapema.ndim == 3:
     balnearioItapema = balnearioItapema[:, :, 0]
 
@@ -51,7 +51,7 @@ balnearioItapema_bin = balnearioItapema > limiar
 io.imshow(balnearioItapema_bin)
 io.show()
 
-balnearioItapema2025 = io.imread('BalnearioItapema.png')
+balnearioItapema2025 = io.imread('assets/BalnearioItapema.png')
 if balnearioItapema2025.ndim == 3:
     balnearioItapema2025 = balnearioItapema2025[:, :, 0]
 
