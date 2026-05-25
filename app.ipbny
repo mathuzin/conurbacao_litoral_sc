@@ -1,0 +1,62 @@
+# integrantes: João Eduardo Cappellari Trevisol, Marcelli Rita Harbs e Matheus Ohrt Perazzo Leite Galvão
+
+from skimage import io, filters, color
+
+balneario = io.imread('Balneario.png')
+if balneario.ndim == 3:
+    balneario = balneario[:, :, 0]
+
+limiar = filters.threshold_otsu(balneario)
+balneario_bin = balneario > limiar
+
+itapema = io.imread('Itapema.png')
+if itapema.ndim == 3:
+    itapema = itapema[:, :, 0]
+
+limiar2 = filters.threshold_otsu(itapema)
+itapema_bin = itapema > limiar2
+
+# io.imshow(balneario_bin)
+# io.show()
+# io.imshow(itapema_bin)
+# io.show()
+
+balneario25 = io.imread('Balneario2025.png')
+if balneario25.ndim == 3:
+    balneario25 = balneario25[:, :, 0]
+
+limiar = filters.threshold_otsu(balneario25)
+balneario25_bin = balneario25 > limiar
+
+itapema25 = io.imread('Itapema2025.png')
+if itapema25.ndim == 3:
+    itapema25 = itapema25[:, :, 0]
+
+limiar2 = filters.threshold_otsu(itapema25)
+itapema25_bin = itapema25 > limiar2
+
+# io.imshow(balneario25_bin)
+# io.show()
+# io.imshow(itapema25_bin)
+# io.show()
+
+
+balnearioItapema = io.imread('BalnearioItapema2015.png')
+if balnearioItapema.ndim == 3:
+    balnearioItapema = balnearioItapema[:, :, 0]
+
+limiar = filters.threshold_otsu(balnearioItapema)
+balnearioItapema_bin = balnearioItapema > limiar
+
+io.imshow(balnearioItapema_bin)
+io.show()
+
+balnearioItapema2025 = io.imread('BalnearioItapema.png')
+if balnearioItapema2025.ndim == 3:
+    balnearioItapema2025 = balnearioItapema2025[:, :, 0]
+
+limiar = filters.threshold_otsu(balnearioItapema2025)
+balnearioItapema2025_bin = balnearioItapema2025 > limiar
+
+io.imshow(balnearioItapema2025_bin)
+io.show()
